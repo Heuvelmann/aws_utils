@@ -1,7 +1,7 @@
 from shareplum import Site
 from shareplum.site import Version
 from shareplum import Office365
-from aws_s3_helpers import AwsHelper
+from aws_helpers.aws_s3_helpers import AwsHelper
 import os 
 import json
 import re

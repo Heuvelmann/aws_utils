@@ -1,6 +1,6 @@
 import boto3
 import logging
-from logger import logger
+from aws_helpers.logger import logger
 from botocore.exceptions import ClientError
 import pandas as pd
 from datetime import date
