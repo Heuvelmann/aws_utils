@@ -1,7 +1,6 @@
 import boto3
 import logging
-from utils.logger import logger
-from config import cfg
+from logger import logger
 from botocore.exceptions import ClientError
 import pandas as pd
 from datetime import date
@@ -16,8 +15,8 @@ bucket_object = NamedTuple("bucket_object", [("bucket", str),
 class AwsHelper:
     """[summary]
     """  
-    def __init__(self):
-        self.s3_client = boto3.client('s3', region_name=cfg.AWS_REGION)
+    def __init__(self, region):
+        self.s3_client = boto3.client('s3', region_name=region)
 
     def download_from_s3(self, bucket: str, key: str, local_path: str):
         """[summary]
@@ -102,9 +101,9 @@ class AwsHelper:
                 logging.error(f'Error cargando a S3, {e}')
         return None
     
-    def create_bucket(self, bucket_name:str, configuration:dict = None):
+    def create_bucket(self, bucket_name:str,region:str , configuration:dict = None):
         
-        configuration_buck = {'LocationConstraint': cfg.AWS_REGION}
+        configuration_buck = {'LocationConstraint': region}
         configuration_buck.update(configuration)
 
         logger.info(f"Creando bucket con el nombre {bucket_name}")
