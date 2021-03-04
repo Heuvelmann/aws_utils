@@ -8,7 +8,7 @@ Instalar mediante  **pip install git+https://github.com/Pactia/aws_utils**
 ```python
 from aws_helpers import aws_s3_helpers
 s3_client_utils = aws_s3_helpers.AwsHelper(region = "us-east-1")
-s3_client_utils = get_s3_sub_paths("pactia-datalake-in", "variables_externas/")
+list_objectos_en_la_ruta = get_s3_sub_paths("pactia-datalake-in", "variables_externas/")
 ```
 
 ## TODO: 
