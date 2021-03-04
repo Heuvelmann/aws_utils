@@ -2,12 +2,12 @@ from setuptools import setup
 
 setup(
     # Needed to silence warnings (and to be a worthwhile package)
-    name='Pactia-AWS-Utils',
+    name='pactiaawsutils',
     url='https://github.com/Pactia/aws_utils',
     author='Pactia Team',
     author_email='',
     # Needed to actually package something
-    packages=['aws-helpers'],
+    packages=['aws_helpers'],
     # Needed for dependencies
     install_requires=['numpy', 'boto3', 'pandas', 'shareplum' ],
     # *strongly* suggested for sharing
