@@ -5,11 +5,21 @@ Instalar mediante  **pip install git+https://github.com/Pactia/aws_utils**
 
 ## Ejemplo de uso simple: 
 
+1. Listar los objetos en un ruta de S3
 ```python
 from aws_helpers import aws_s3_helpers
 s3_client_utils = aws_s3_helpers.AwsHelper(region = "us-east-1")
 list_objectos_en_la_ruta = s3_client_utils.get_s3_sub_paths("pactia-datalake-in", "variables_externas/")
 ```
+2. Listar los objetos en una ruta de Sharepoint 
+
+```python
+from aws_helpers.sharepoint_helpers import  SharePointHelper
+client_sharepoint = SharePointHelper(USUARIO, CONTRASEÑA)
+lista_objetos_en_la_ruta = client_sharepoint.list_files_share("Documentos%20compartidos/General/Bases de datos")
+```
+En el caso de Sharepoint el usuario y la contraseña son los de la cuenta de Microsoft365.
+
 
 ## TODO: 
 1. Mejorar convencion de nombres 
